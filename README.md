@@ -1,50 +1,63 @@
+# 🩺 Prediksi Risiko Diabetes Menggunakan Machine Learning
 
+> Proyek ini bertujuan untuk memprediksi risiko seseorang terkena diabetes menggunakan algoritma machine learning berbasis data kesehatan pasien perempuan keturunan Pima Indian.
 
-Proyek ini bertujuan untuk menganalisis dan memprediksi performa akademik siswa berdasarkan berbagai faktor seperti waktu belajar, dukungan orang tua, absensi, dan lain-lain. Model prediktif ini dapat digunakan untuk mengidentifikasi siswa yang berisiko rendah atau tinggi agar dapat dilakukan intervensi yang tepat.
+## 📌 Deskripsi Proyek
+Diabetes merupakan penyakit kronis yang sering tidak terdiagnosis sejak dini. Dengan pendekatan machine learning, proyek ini mencoba membangun model prediksi risiko diabetes berdasarkan fitur-fitur seperti kadar glukosa, tekanan darah, usia, dan indeks massa tubuh.
 
-## 🔍 Tujuan Proyek
+## 🎯 Tujuan
+- Membangun model klasifikasi untuk memprediksi apakah seseorang menderita diabetes.
+- Mengidentifikasi fitur-fitur yang paling berpengaruh terhadap prediksi risiko.
+- Membandingkan performa beberapa algoritma: Logistic Regression, Decision Tree, dan Random Forest.
 
-- Melakukan eksplorasi data performa akademik siswa.
-- Menemukan insight penting dari faktor-faktor yang memengaruhi nilai siswa.
-- Membangun model machine learning untuk memprediksi nilai akhir siswa.
+## 📁 Dataset
+- Dataset: [Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
+- Total data: 768 baris, 9 kolom
+- Fitur penting: `Glucose`, `BMI`, `Age`, `DiabetesPedigreeFunction`, dll.
+- Target: `Outcome` (1 = diabetes, 0 = tidak)
 
-## 🛠 Tools & Teknologi
-
-- Python (Pandas, NumPy, Matplotlib, Seaborn)
+## 🛠️ Tools & Library
+- Python
+- Pandas, NumPy
 - Scikit-learn
+- Matplotlib, Seaborn
 - Jupyter Notebook
 
-## 🧩 Dataset
+## ⚙️ Proses
+1. **Data Cleaning & Preprocessing**
+   - Mengganti nilai 0 tidak valid dengan median
+   - Standarisasi fitur numerik
+   - Train-test split (80:20)
 
-Dataset yang digunakan adalah [Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance) dari UCI Machine Learning Repository.
+2. **Modeling**
+   - Logistic Regression
+   - Decision Tree
+   - Random Forest
+   - Evaluasi dengan: Accuracy, Precision, Recall, F1-Score
 
-## 📊 Tahapan Pengerjaan
+3. **Hyperparameter Tuning**
+   - Menggunakan GridSearchCV untuk Random Forest
 
-1. Data Cleaning & Preprocessing
-2. Exploratory Data Analysis (EDA)
-3. Feature Engineering
-4. Model Training (Linear Regression, Random Forest, dll)
-5. Evaluasi Model
-6. Interpretasi Hasil
+4. **Feature Importance**
+   - Fitur paling berpengaruh: `Glucose`, `BMI`, `Pedigree`, `Age`
 
-## 📁 Struktur Folder
+## 📊 Hasil Evaluasi Model Terbaik (Random Forest)
+| Metrik     | Skor   |
+|------------|--------|
+| Accuracy   | 78%    |
+| Precision  | 72%    |
+| Recall     | 61%    |
+| F1-Score   | 66%    |
 
-student-performance/
-├── data/ # Berisi dataset asli dan hasil preprocessing
-├── notebooks/ # Notebook analisis dan training model
-├── models/ # Model yang telah dilatih
-├── results/ # Visualisasi dan hasil evaluasi model
-└── README.md # Dokumentasi proyek
+> Random Forest dipilih sebagai model terbaik karena memberikan keseimbangan performa pada semua metrik serta kemampuan menangani data kompleks.
 
-markdown
-Copy
-Edit
+## 🔍 Insight Utama
+- **Glucose** memiliki pengaruh paling besar terhadap prediksi risiko diabetes.
+- Model machine learning dapat membantu skrining dini untuk kasus diabetes di komunitas medis.
 
-## 🚀 Hasil Singkat
+## 📎 Referensi
+- Kaggle Dataset: https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+- Studi pendukung dari jurnal dan penelitian lain yang relevan (lihat laporan lengkap).
 
-- Model **Random Forest** memberikan akurasi terbaik dengan R² sebesar 0.85.
-- Faktor paling berpengaruh: jumlah absensi, jam belajar per minggu, dan dukungan dari keluarga.
+---
 
-## 📌 Catatan
-
-Proyek ini dibuat sebagai bagian dari portofolio Data Science & Machine Learning. Cocok digunakan untuk menunjukkan pemahaman EDA, pemodelan, dan interpretasi data.
